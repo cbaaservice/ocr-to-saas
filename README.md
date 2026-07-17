@@ -20,6 +20,8 @@ preload_from_hub:
 short_description: Open OCR API for DRC Ebola contact-tracing docs.
 ---
 
+07/17 trigger rebuild
+
 # OCR Capacity Building as a Service
 
 Open OCR API for Ebola contact-tracing documents in the DRC. Choose between
