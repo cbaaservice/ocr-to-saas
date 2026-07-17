@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { runOcrDocument, uploadDocument } from "./api/client";
+import ApiDocs from "./components/ApiDocs";
 import type { ModelChoice, PageResult } from "./types";
 
 const EXAMPLES = [
@@ -200,6 +201,8 @@ export default function App() {
           {status}
           {pages.length > 0 ? ` · ${pages.filter((p) => p.status === "complete").length}/${pages.length || "?"} pages` : ""}
         </p>
+
+        <ApiDocs />
       </header>
 
       <main className="workspace">

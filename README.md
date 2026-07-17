@@ -39,7 +39,13 @@ visual regions. **GLM-OCR** returns text recognition output without bbox crops.
 
 ## API
 
-Streaming endpoint: `/run_ocr`
+Streaming endpoint: `/run_ocr` (also registered as MCP tool `run_ocr`).
+
+On the live Space UI, open **Use via API** for copy-paste clients. Machine-readable docs:
+
+- Gradio schema: [`/gradio_api/info`](https://tonic-ocr-ebola.hf.space/gradio_api/info)
+- OpenAPI: [`/docs`](https://tonic-ocr-ebola.hf.space/docs) · [`/openapi.json`](https://tonic-ocr-ebola.hf.space/openapi.json)
+- Health: [`/healthz`](https://tonic-ocr-ebola.hf.space/healthz)
 
 | Arg | Type | Default | Description |
 |-----|------|---------|-------------|
@@ -52,7 +58,7 @@ Streaming endpoint: `/run_ocr`
 ```python
 from gradio_client import Client, handle_file
 
-client = Client("OWNER/ocr-ebola")
+client = Client("Tonic/ocr-ebola")
 job = client.submit(
     handle_file("form.pdf"),
     0,
