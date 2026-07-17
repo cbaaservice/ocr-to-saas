@@ -17,7 +17,7 @@ models:
 preload_from_hub:
   - ATH-MaaS/OvisOCR2
   - zai-org/GLM-OCR
-short_description: Open OCR API for Ebola contact-tracing docs in DRC (OvisOCR2 + GLM-OCR).
+short_description: Open OCR API for DRC Ebola contact-tracing docs.
 ---
 
 # OCR Capacity Building as a Service
