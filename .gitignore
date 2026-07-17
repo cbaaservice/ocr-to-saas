@@ -1,0 +1,6 @@
+references/
+.cursor/
+.git/cursor/
+frontend/node_modules/
+**/__pycache__/
+*.pyc
