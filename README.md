@@ -35,7 +35,7 @@ visual regions. **GLM-OCR** returns text recognition output without bbox crops.
 ## Supported inputs
 
 - Images: PNG, JPEG, WebP
-- PDFs: up to 50 pages (rasterized locally; up to 4 pages per ZeroGPU lease)
+- PDFs: up to 50 pages (rasterized locally)
 
 ## API
 
@@ -73,7 +73,26 @@ for chunk in job:
 
 Also available as an MCP tool named `run_ocr`. Health check: `GET /healthz`.
 
+## Batch a folder
+
+```bash
+pip install gradio_client
+
+python scripts/ocr_folder.py ./scans --out ./ocr_out --model OvisOCR2
+python scripts/ocr_folder.py ./scans --recursive --model GLM-OCR --skip-existing
+python scripts/ocr_folder.py ./scans --space https://tonic-ocr-ebola.hf.space
+```
+
+Writes `<name>.md` plus a small `<name>.json` sidecar (page counts / timing) under `--out`.
+
 ## Local run
+
+with docker :
+
+```bash
+docker run -it -p 7860:7860 --platform=linux/amd64 --gpus all \
+	registry.hf.space/tonic-ocr-ebola:latest python app.py
+```
 
 ```bash
 # Backend deps (Space installs requirements.txt automatically)
